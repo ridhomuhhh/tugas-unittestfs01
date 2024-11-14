@@ -58,7 +58,23 @@ func TestRun(t *testing.T) {
 			err:      nil,
 		},
 		// test case 4
+		{
+			name: "tarik 2x",
+			args: args{
+				perintah: []string{"withdraw", "withdraw"},
+			},
+			expected: 250000,
+			err:      nil,
+		},
 		// test case 5
+		{
+			name: "setor 2x, tarik 2x",
+			args: args{
+				perintah: []string{"deposit", "deposit", "withdraw", "withdraw"},
+			},
+			expected: 300000,
+			err:      nil,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
